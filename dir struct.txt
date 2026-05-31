@@ -1,0 +1,23 @@
+my-portfolio/
+├── public/                 # Static assets (must load fast!)
+│   ├── fonts/              # Where we will put high-end custom fonts
+│   └── images/             # High-res, compressed project mockups
+│
+├── src/
+│   ├── app/                # The Next.js App Router (Pages & Routing)
+│   │   ├── layout.tsx      # Global layout (Navbar, Footer, background color)
+│   │   ├── page.tsx        # Your main landing page (where the magic happens)
+│   │   └── globals.css     # Tailwind directives and base styles
+│   │
+│   ├── components/         # Reusable UI pieces
+│   │   ├── animations/     # ◄ Drop your ScrollReveal.tsx here
+│   │   ├── sections/       # ◄ Drop PortfolioGrid.tsx here (and Hero, Footer)
+│   │   └── ui/             # Buttons, badges, and smaller standard elements
+│   │
+│   └── lib/                # Utility functions and data
+│       ├── data.ts         # We can store your project details here later
+│       └── utils.ts        # Helper functions (like class merging)
+│
+├── tailwind.config.ts      # Where we will define your premium dark mode colors
+├── package.json            # Dependencies (where framer-motion lives)
+└── next.config.mjs         # Next.js configuration settings
