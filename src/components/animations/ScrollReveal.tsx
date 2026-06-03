@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
-// We are adding 'width' to the allowed TypeScript interface
 interface ScrollRevealProps {
   children: ReactNode;
   delay?: number;
@@ -11,16 +10,15 @@ interface ScrollRevealProps {
   width?: "fit-content" | "100%" | string; 
 }
 
-// We destructure 'width' and give it a default value so it doesn't break older components
 export default function ScrollReveal({ 
   children, 
   delay = 0, 
   className = "", 
-  width = "fit-content" 
+  width = "100%" // <--- This is the master fix. Changed from "fit-content" to "100%"
 }: ScrollRevealProps) {
   return (
     <motion.div
-      style={{ width }} // This securely applies the inline width to the animated container
+      style={{ width }} 
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}

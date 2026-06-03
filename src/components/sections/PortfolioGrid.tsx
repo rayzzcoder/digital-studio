@@ -28,7 +28,6 @@ export default function PortfolioGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {projects.map((project, index) => (
             <ScrollReveal key={project.id} delay={index * 0.15}>
-              {/* Wrap the entire card in a Link component */}
               <Link href={`/work/${project.slug}`} className="group block cursor-pointer">
                 
                 <div className="relative w-full aspect-[4/5] bg-zinc-900 overflow-hidden rounded-lg mb-6">
@@ -37,6 +36,7 @@ export default function PortfolioGrid() {
                     src={project.image} 
                     alt={project.title}
                     fill
+                    priority={index === 0}
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>  

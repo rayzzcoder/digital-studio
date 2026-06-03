@@ -11,13 +11,13 @@ const projects = [
     title: "VibePlayer Engine",
     role: "Full-Stack Architecture",
     description: "A seamless, database-backed streaming application engineered for high-performance audio playback and fluid UI interactions.",
-    image: "/images/project-vibe.webp", // Add a screenshot of VibePlayer here
+    image: "/images/project-vibe.webp", 
   },
   {
     title: "Clinical Scheduling Node",
     role: "Backend & Systems Design",
     description: "A secure, comprehensive appointment management architecture featuring full CRUD operations and relational database tracking.",
-    image: "/images/project-medical.webp", // Add a screenshot of your appointment system here
+    image: "/images/project-medical.webp", 
   }
 ];
 
@@ -47,39 +47,37 @@ export default function Work() {
 function ProjectCard({ project, index }: { project: any, index: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Tracks the scroll progress specifically when this container is in the viewport
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
-  // Maps the scroll progress (0 to 1) to a pixel transformation (-15% to 15%)
   const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
   return (
-    <div className="flex flex-col md:flex-row gap-12 items-center group cursor-none">
+    // Switched from Flexbox to a strict 12-column Grid
+    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center group cursor-none">
       
-      {/* The Parallax Image Container */}
+      {/* The Image Container strictly takes up 7 columns out of 12 */}
       <div 
         ref={containerRef}
-        className={`w-full md:w-2/3 aspect-video relative overflow-hidden rounded-xl border border-zinc-800 ${index % 2 !== 0 ? 'md:order-2' : ''}`}
+        className={`relative w-full aspect-video overflow-hidden rounded-xl border border-zinc-800 md:col-span-7 ${index % 2 !== 0 ? 'md:order-2' : 'md:order-1'}`}
       >
         <motion.div style={{ y }} className="absolute inset-0 w-full h-[130%] -top-[15%]">
-          <Image
-            sizes="(max-width: 768px) 100vw, 50vw" 
+          <Image 
             src={project.image}
             alt={project.title}
             fill
+            sizes="(max-width: 768px) 100vw, 60vw"
             className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
           />
         </motion.div>
         
-        {/* Subtle glass overlay that fades on hover */}
         <div className="absolute inset-0 bg-zinc-950/20 group-hover:bg-transparent transition-colors duration-700" />
       </div>
 
-      {/* Project Details */}
-      <div className={`w-full md:w-1/3 ${index % 2 !== 0 ? 'md:order-1' : ''}`}>
+      {/* The Text Container strictly takes up the remaining 5 columns */}
+      <div className={`md:col-span-5 ${index % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
         <ScrollReveal delay={0.2}>
           <div className="text-emerald-500 font-mono text-xs uppercase tracking-widest mb-4">
             {project.role}
@@ -91,7 +89,6 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
             {project.description}
           </p>
           
-          {/* Custom interactive view button */}
           <button className="flex items-center gap-4 text-sm font-mono uppercase tracking-widest hover:text-emerald-400 transition-colors group/btn">
             <span className="w-8 h-[1px] bg-zinc-600 group-hover/btn:bg-emerald-400 group-hover/btn:w-12 transition-all duration-300" />
             Inspect Architecture
