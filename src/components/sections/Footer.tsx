@@ -29,7 +29,7 @@ export default function Footer() {
           
           <ScrollReveal>
             {/* Using fluid viewport width (vw) ensures the text dynamically shrinks on smaller laptops so it never overflows */}
-            <h2 className="text-[15vw] md:text-[11vw] lg:text-[8rem] font-bold tracking-tighter leading-[0.85] m-0">
+            <h2 className="text-[11vw] sm:text-[10vw] md:text-[9vw] lg:text-[8rem] font-bold tracking-tighter leading-[0.85] m-0">
               LET'S<br/>
               <span className="text-zinc-700 hover:text-white transition-colors duration-700">COLLABORATE.</span>
             </h2>
