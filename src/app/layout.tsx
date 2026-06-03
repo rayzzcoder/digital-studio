@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer"; 
 import Preloader from "@/components/animations/Preloader";
+import CustomCursor from "@/components/animations/CustomCursor";
+import TerminalEasterEgg from "@/components/ui/TerminalEasterEgg";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-zinc-950 text-zinc-50 antialiased`}>
+      <body className={`${inter.className} bg-zinc-950 text-zinc-50 antialiased md:cursor-none`}>
+        <CustomCursor />
+        <TerminalEasterEgg />
         <Preloader />
         <Navbar />
         {/* Added flex layout to push the footer to the bottom */}

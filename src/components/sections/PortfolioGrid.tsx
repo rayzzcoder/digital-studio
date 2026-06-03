@@ -33,6 +33,7 @@ export default function PortfolioGrid() {
                 
                 <div className="relative w-full aspect-[4/5] bg-zinc-900 overflow-hidden rounded-lg mb-6">
                   <Image 
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     src={project.image} 
                     alt={project.title}
                     fill

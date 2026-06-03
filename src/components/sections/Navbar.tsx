@@ -27,13 +27,13 @@ export default function Navbar() {
         <div className="flex items-center gap-8">
           <Link 
             href="#about" 
-            className="text-xs font-mono uppercase tracking-widest text-zinc-400 hover:text-white transition-colors"
+            className="text-xs font-mono uppercase tracking-widest text-zinc-200 hover:text-white transition-colors"
           >
             About
           </Link>
           <Link 
             href="#contact" 
-            className="text-xs font-mono uppercase tracking-widest text-zinc-400 hover:text-white transition-colors"
+            className="text-xs font-mono uppercase tracking-widest text-zinc-200 hover:text-white transition-colors"
           >
             Contact
           </Link>

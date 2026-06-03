@@ -2,6 +2,8 @@ import PortfolioGrid from "@/components/sections/PortfolioGrid";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import Expertise from "@/components/sections/Expertise";
 import About from "@/components/sections/About";
+import GlobalGreeting from "@/components/animations/GlobalGreeting";
+import Work from "@/components/sections/Work";
 
 export default function Home() {
   return (
@@ -19,8 +21,9 @@ export default function Home() {
           </ScrollReveal>
           
           <ScrollReveal delay={0.4}>
+          <GlobalGreeting />
             <p className="text-zinc-400 text-lg md:text-2xl max-w-2xl font-light mb-12">
-              Hi, I'm Raja Abdul Rafay. I engineer high-performance, visually immersive web experiences for global brands that demand excellence.
+            I'm Raja Abdul Rafay. I engineer high-performance, visually immersive web experiences for global brands that demand excellence.
             </p>
           </ScrollReveal>
 
@@ -46,6 +49,8 @@ export default function Home() {
 
       {/* 3. THE CAPABILITY MATRIX */}
       <Expertise />
+
+      <Work />
 
       {/* 4. About Me */}
       <About />

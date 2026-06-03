@@ -9,3 +9,9 @@ html {
   background-color: #ffffff; /* white */
   color: #18181b; /* zinc-900 */
 }
+
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+}

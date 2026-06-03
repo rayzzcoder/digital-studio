@@ -6,7 +6,7 @@
 ![Next.js](https://img.shields.io/badge/Next.js-16.2-black?style=flat-square&logo=next.js)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
 
-**Live Deployment:** [Your Vercel URL Here]
+**Live Deployment:** [\[Vercel URL\]](https://digital-studio-portfolio.vercel.app/)
 
 ---
 

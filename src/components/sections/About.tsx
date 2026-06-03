@@ -11,6 +11,7 @@ export default function About() {
           <ScrollReveal>
             <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden border border-zinc-800 group">
               <Image 
+                sizes="(max-width: 768px) 100vw, 50vw"
                 src="/images/me.webp" 
                 alt="Portrait"
                 fill
